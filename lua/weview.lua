@@ -4,13 +4,9 @@ local config = {
   open_cmd = "",
   search_urls = {
     Google = "https://www.google.com/search?q=%s",
-    GitHub = "https://github.com/search?q=%s",
-    DeepL = "https://www.deepl.com/ja/translator#en/ja/%s",
   },
   aliases = {
     g = "Google",
-    gh = "GitHub",
-    d = "DeepL",
   },
   command_name = "Weview", -- the default command name
 }
