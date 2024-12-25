@@ -1,8 +1,10 @@
 # 🌐 Weview.nvim
 Weview.nvim is a Neovim plugin that allows you to search the web using predefined search engines or aliases, directly from your editor. It's fully customizable—you can add new search engines, set up aliases, and even rename the command to suit your preferences.
 
+<img src="./assets/weview.gif" alt="bbwl" width="800"/>
+
 ## 🚀 Installation
-Here's how to install Weview.nvim using lazy.nvim:
+Here's how to install `Weview.nvim` using [lazy.nvim](https://www.github.com/folke/lazy.nvim):
 
 ```lua
 {
@@ -12,10 +14,16 @@ Here's how to install Weview.nvim using lazy.nvim:
       search_urls = {
         StackOverflow = "https://stackoverflow.com/search?q=%s",
         Bing = "https://www.bing.com/search?q=%s",
+        Google = "https://www.google.com/search?q=%s",
+        GitHub = "https://github.com/search?q=%s",
+        DeepL = "https://www.deepl.com/ja/translator#en/ja/%s",
       },
       aliases = {
         so = "StackOverflow",
         b = "Bing",
+        g = "Google",
+        gh = "GitHub",
+        d = "DeepL",
       },
       command_name = "Find", -- Rename the default command
     })
@@ -61,13 +69,9 @@ Weview.nvim comes with the following default configuration:
 require("weview").setup({
   search_urls = {
     Google = "https://www.google.com/search?q=%s",
-    GitHub = "https://github.com/search?q=%s",
-    DeepL = "https://www.deepl.com/ja/translator#en/ja/%s",
   },
   aliases = {
     g = "Google",
-    gh = "GitHub",
-    d = "DeepL",
   },
   command_name = "Weview",
 })
@@ -98,9 +102,9 @@ require("weview").setup({
 })
 ```
 ## 🌐 How It Works
-- Default Command: The command opens the browser using open on macOS or xdg-open on Linux.
-- Search Query Encoding: Queries are URL-encoded to ensure compatibility with search engines.
-- Completion: Both search engine names and aliases are included in the autocompletion suggestions.
+- **Default Command:** The command opens the browser using open on macOS or xdg-open on Linux.
+- **Search Query Encoding:** Queries are URL-encoded to ensure compatibility with search engines.
+- **Completion:** Both search engine names and aliases are included in the autocompletion suggestions.
 ## ❤️ Contributions
 We welcome bug reports and feature requests! Feel free to open an issue or submit a pull request.
 
